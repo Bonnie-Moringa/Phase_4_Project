@@ -2,7 +2,7 @@ import React from "react";
 import ClientForm from "../components/ClientForm";
 import ClientList from "../components/ClientList";
 
-function ClientPage() {
+function Clients() {
   return (
     <div className="card">
       <h2>Manage Clients</h2>
@@ -12,4 +12,4 @@ function ClientPage() {
   );
 }
 
-export default ClientPage;
+export default Clients;
