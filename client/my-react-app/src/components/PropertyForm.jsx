@@ -18,15 +18,31 @@ function PropertyForm() {
   };
 
   return (
-    <div className="card">
-      <h2>Add Property</h2>
-      <form onSubmit={handleSubmit}>
-        <input name="name" placeholder="Name" onChange={handleChange} />
-        <input name="status" placeholder="Status" onChange={handleChange} />
-        <input name="agent_id" placeholder="Agent ID" onChange={handleChange} />
-        <button type="submit">Add</button>
-      </form>
-    </div>
+    <form onSubmit={handleSubmit} className="card">
+      <h3>Add New Property (Project)</h3>
+      <input
+        name="name"
+        placeholder="Property Name (e.g. Residential Plot A)"
+        onChange={handleChange}
+        value={formData.name}
+        required
+      />
+      <input
+        name="status"
+        placeholder="Status (Available/Sold)"
+        onChange={handleChange}
+        value={formData.status}
+        required
+      />
+      <input
+        name="agent_id"
+        placeholder="Agent ID"
+        onChange={handleChange}
+        value={formData.agent_id}
+        required
+      />
+      <button type="submit">Add Property</button>
+    </form>
   );
 }
 

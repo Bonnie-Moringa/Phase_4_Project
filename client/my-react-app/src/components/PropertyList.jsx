@@ -10,11 +10,11 @@ function PropertyList() {
 
   return (
     <div className="card">
-      <h2>Properties</h2>
+      <h3>Property List</h3>
       <ul>
         {properties.map((p) => (
           <li key={p.id}>
-            {p.name} - {p.status} (Agent: {p.agent_name})
+            {p.name} - {p.status} (Agent ID: {p.agent_id})
           </li>
         ))}
       </ul>

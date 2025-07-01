@@ -1,36 +1,27 @@
-import React from 'react';
-import AgentForm from './components/AgentForm';
-import AgentList from './components/AgentList';
-import PropertyForm from './components/PropertyForm';
-import PropertyList from './components/PropertyList';
-import ClientForm from './components/ClientForm';
-import ClientList from './components/ClientList';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
+import Agents from "./pages/AgentPage";
+import Properties from "./pages/PropertyPage";
+import Clients from "./pages/ClientPage";
+import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="header">
-        <h1>Real Estate Management</h1>
-      </header>
-      <main className="main-content">
-        <section>
-          <h2>Agents</h2>
-          <AgentForm />
-          <AgentList />
-        </section>
-        <section>
-          <h2>Properties</h2>
-          <PropertyForm />
-          <PropertyList />
-        </section>
-        <section>
-          <h2>Clients</h2>
-          <ClientForm />
-          <ClientList />
-        </section>
-      </main>
-    </div>
+    <Router>
+      <div className="App">
+        <Navbar />
+        <div className="page-container">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/agents" element={<Agents />} />
+            <Route path="/properties" element={<Properties />} />
+            <Route path="/clients" element={<Clients />} />
+          </Routes>
+        </div>
+      </div>
+    </Router>
   );
 }
 
